@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'header.html' %} 
+
+<div class="breadcumb-area bg-img bg-grfadient-overlay"
+style="background-image:url({% static 'img/appointment/background_image.jpg'%}) ;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class='col-12'>
+                <h2 class="title">Appointment</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="breadcumb--con">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">
+                        <i class="fa fa-home"></i>Home</a></li>
+                        <li class="breadcrumb-item active"
+                        aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h3>Review your information: </h3>
+
+        <p>{{name}}</p>
+        <p>{{phone}}</p>
+        <p>{{email}}</p>
+        <p>{{salon}}</p>
+        <p>{{service}}</p>
+        <p>{{employee}}</p>
+        
+{% endblock %}

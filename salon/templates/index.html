@@ -1,0 +1,429 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'header.html' %} 
+
+<body id="body">
+
+    <!--==========================
+      Top Bar
+    ============================-->
+    <section id="topbar" class="d-none d-lg-block">
+      <div class="container clearfix">
+        <div class="contact-info float-left">
+          <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">name@websitename.com</a>
+          <i class="fa fa-phone"></i> +1 2345 67855 22
+        </div>
+        <div class="social-links float-right">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+  
+  
+    <!--==========================
+      Intro Section
+    ============================-->
+    <section id="intro">
+  
+      <div class="intro-content">
+        <h2><span>Hair & Skin Care</span><br>Best Salon in City</h2>
+        <div>
+          <a href="#about" class="btn-get-started scrollto">OFFERS</a> 
+        </div>
+      </div>
+      <div class="item" style="background-image: url('img/intro-carousel/1.jpg');"></div>  
+    </section><!-- #intro -->
+  
+    <main id="main">
+  
+      <!--==========================
+        About Section
+      ============================-->
+      <section id="about" class="wow fadeInUp sec-padding">
+        <div class="container">
+          <div class="section-header">
+            <h2>About Mirrors</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 about-img">
+              <img src="img/about-img.png" alt="">
+            </div>
+  
+            <div class="col-lg-6 content">
+              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+              <h3>Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident</h3>
+              <p>Consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat</p>
+              <ul>
+                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro consequatur aliquam, incidunt fugiat culpa.</li>
+                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro consequatur aliquam, culpa esse aute nulla.</li>
+                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro esse aute nulla. malis nulla duis fugiat</li>
+              </ul> 
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- #about -->
+  
+
+       <!-- Salons -->
+      <section id="services" class="sec-padding">
+        <div class="container">
+          <div class="section-header">
+            <h2>Salons</h2>
+            <p></p>
+          </div>
+          
+      
+
+
+          <div class="row">
+            {% for salon in salons %}   
+            <div class="col-lg-4">
+                 <div class="card wow fadeInLeft" style="width: 18rem;">
+                     <img src="img/services/1.jpg" alt="" class="card-img-top">  
+                     <div class="card-body">
+                      
+                      <h5><a href="{%url 'salon:salon_detail' salon.id %}">{{salon.name}}</a></h5> 
+                      
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+
+      <!--==========================
+        Services Section
+      ============================-->
+      <section id="services" class="sec-padding">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our Services</h2>
+            <p></p>
+          </div>
+  
+          <div class="row">
+              {% for service in services %}   
+               <div class="col-lg-4">
+                 <div class="card wow fadeInLeft" style="width: 18rem;">
+                     <img src="img/services/1.jpg" alt="" class="card-img-top">  
+                    <div class="card-body">
+                      <h5><a href="{%url 'salon:salon_detail' service.id %}">{{service.name}}</a></h5> 
+                      
+                    </div>
+                  </div>
+                </div>
+               {% endfor %}
+                
+                
+          </div>
+                  
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="box wow fadeInRight" data-wow-delay="0.2s">
+                <div class="icon"><i class="fa fa-map"></i></div>
+                <h4 class="title"><a href="">BRIDAL</a></h4>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- #services -->
+      
+     
+      <!-- #clients -->
+  
+      <!--==========================
+        Clients Section
+      ============================-->
+      <section id="clients" class="wow fadeInUp sec-padding">
+        <div class="container">
+          <div class="section-header">
+            <h2>Products</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          </div>
+  
+          <div class="owl-carousel clients-carousel">
+            <img src="img/clients/client-1.jpg" alt="">
+            <img src="img/clients/client-2.jpg" alt="">
+            <img src="img/clients/client-3.jpg" alt="">
+            <img src="img/clients/client-4.jpg" alt="">
+            <img src="img/clients/client-5.jpg" alt="">
+            <img src="img/clients/client-6.jpg" alt="">
+          </div>
+  
+        </div>
+      </section><!-- #clients -->
+      
+
+
+      <section class="book-an-appointment-area
+      section-padding-100 bg-img bg-grfadient-overlay
+      jarallax clearfix" style="background-image: url('{% static 'img/appointment/background.jpg'%}');">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="section-heading text-center white">
+                <h2>Book an appointment</h2>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            
+              <!-- Appointment section -->
+
+              <div class='appointment-form'>
+                <form action="" method="post">
+                  <div class ="row">
+                    <div class ="col-md-6"> 
+                      <div class="form-group mb-30">
+                        <input type="text" name ="your-name"
+                        class ="form-control" placeholder="Your name" required>
+                      </div>
+                    </div>
+
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="salon"
+                        class ="form-control" placeholder="Salon" required>
+                      </div>
+                    </div>
+
+                    
+
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="your-phone"
+                        class ="form-control" placeholder="Your phone" required>
+                      </div>
+                    </div>
+
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="employee"
+                        class ="form-control" placeholder="Employee" required>
+                      </div>
+                    </div>
+
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="your-email"
+                        class ="form-control" placeholder="Your email" required>
+                      </div>
+                    </div>
+
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="date"
+                        class ="form-control" placeholder="Date" required>
+                      </div>
+                    </div>
+
+               
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="your-text"
+                        class ="form-control" placeholder="Your text" >
+                      </div>
+                      <div class="col-12 text-center">
+                        <button type="submit" class="btn
+                        dento-btn">Booking now</button>
+                      </div></div>
+
+                    <div class ="col-md-6">
+                      <div class="form-group mb-30">
+                        <input type="text" name ="time"
+                        class ="form-control" placeholder="Time" required>
+                      </div>
+                    </div>
+
+                    <div class="col-12 text-center">
+                      <button type="submit" class="btn
+                      dento-btn">Booking now</button>
+                    </div>
+
+                  </div>
+                </form>                      
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!--==========================
+        Testimonials Section
+      ============================-->
+      <section id="testimonials" class="wow fadeInUp sec-padding">
+        <div class="container">
+          <div class="section-header">
+            <h2>Testimonials</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          </div>
+          <div class="owl-carousel testimonials-carousel">
+  
+              <div class="testimonial-item">
+                <p>Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
+                  
+                </p> 
+                <h3>Mrio James</h3>
+                <h4>CEO &amp; Founder</h4>
+              </div>
+  
+              <div class="testimonial-item">
+                <p>
+                  Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
+                  
+                </p> 
+                <h3>Finton Gofnes</h3>
+                <h4>CTO</h4>
+              </div>
+  
+              <div class="testimonial-item">
+                <p>
+                  Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
+                  
+                </p> 
+                <h3>Marcus Kell</h3>
+                <h4>Marketing</h4>
+              </div>
+  
+              <div class="testimonial-item">
+                <p>
+                  Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
+                  
+                </p> 
+                <h3>Williams Belly</h3>
+                <h4>Accounts</h4>
+              </div>
+  
+              <div class="testimonial-item">
+                <p>
+                  Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore
+                  
+                </p> 
+                <h3>Larry Hanson</h3>
+                <h4>Investor</h4>
+              </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- #testimonials -->
+  
+      <!--==========================
+        Call To Action Section
+      ============================-->
+      <section id="call-to-action" class="wow fadeInUp sec-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 text-center text-lg-left">
+              <h3 class="cta-title">Get Our Service</h3>
+              <p class="cta-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="#contact">Contact Us</a>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- #call-to-action -->
+  
+      <!--==========================
+        Contact Section
+      ============================-->
+      <section id="contact" class="wow fadeInUp sec-padding">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          </div>
+  
+          <div class="row contact-info">
+           <div class="col-lg-5"> 
+              <div class="contact-address">
+                <i class="ion-ios-location-outline"></i>
+                <h3>Address</h3>
+                <address>MN-12 Lincon Street, NewYork 12356, USA</address>
+              </div> 
+              <div class="contact-phone">
+                <i class="ion-ios-telephone-outline"></i>
+                <h3>Phone Number</h3>
+                <p><a href="tel:+155895548855">+1 2345 67890 12</a></p>
+              </div> 
+              <div class="contact-email">
+                <i class="ion-ios-email-outline"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:info@example.com">name@website.com</a></p>
+              </div> 
+           </div>
+           <div class="col-lg-7">
+                <div class="container">
+          <div class="form"> 
+            
+             <!-- Form itself -->
+            <form name="sentMessage" class="well" id="contactForm"  novalidate> 
+           <div class="control-group">
+                     <div class="form-group">
+              <input type="text" class="form-control" 
+                        placeholder="Full Name" id="name" required
+                         data-validation-required-message="Please enter your name" />
+                <p class="help-block"></p>
+  
+             </div>
+               </div> 	
+                  <div class="form-group">
+                    <div class="controls">
+              <input type="email" class="form-control" placeholder="Email" 
+                                 id="email" required
+                            data-validation-required-message="Please enter your email" />
+          </div>
+          </div> 	
+                
+                 <div class="form-group">
+                   <div class="controls">
+                   <textarea rows="10" cols="100" class="form-control" 
+                         placeholder="Message" id="message" required
+                 data-validation-required-message="Please enter your message" minlength="5" 
+                         data-validation-minlength-message="Min 5 characters" 
+                          maxlength="999" style="resize:none"></textarea>
+          </div>
+                 </div> 		 
+           <div id="success"> </div> <!-- For success/fail messages -->
+          <button type="submit" class="btn btn-primary pull-right">Send</button><br />
+            </form>
+          </div>
+  
+        </div>
+           </div>
+           
+  
+          </div>
+        </div>
+  
+        <div class="container mb-4 map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d387191.33750346623!2d-73.979681!3d40.6974881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1541477355474" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe> 
+        </div>
+   
+      </section><!-- #contact -->
+  
+    </main>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  
+
+  
+  </body>
+
+{% endblock %}

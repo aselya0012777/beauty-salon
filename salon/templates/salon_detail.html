@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'header.html' %} 
+  <h1>Appointment  details</h1>
+
+  
+  <div class='appointment-form'>
+    <form action="{% url 'appointment:book'%}" method="post">
+      {% csrf_token %}
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <div class="two-cols">
+        <label>
+          Email address
+          <p><input type="email" name="email" required></p>
+
+        </label>
+        <label>
+          Phone number
+          <p><input type="tel" name="phone"><p>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <h6><strong>Salon:</strong> <a href="">{{ salon.name }}</a></h6> <!-- author detail link not yet defined -->
+      <h6><strong>Service:</strong></h6>
+      <select>
+        {% for service in services %}
+          <option value="{{service}}">{{service.name}}</option>
+        {% endfor %}
+      </select>
+      <h6><strong>Employee:</strong></h6>
+      <select>
+        {% for employee in employees %}
+          <option value="{{employee}}">{{employee.name}}</option>
+        {% endfor %}
+      </select>
+      <p><strong>Date:</strong> {{ appointment.date }}</p>
+      <input type="date" name="Appointment request" required>
+          </label>
+          <div class="inline">
+            <label>
+              
+      <p><strong>Time:</strong> {{ appointment.time }}</p>
+
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn
+        dento-btn">Booking now</button>
+      </div>
+    </form>                      
+  </div>
+
+  
+{% endblock %}
+
+
+
+

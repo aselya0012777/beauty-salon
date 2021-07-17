@@ -1,2 +1,6 @@
 /env
 /sqlite3
+/salon/__pycache__
+/salon/migrations
+/appointment/migrations
+/beauty_salon/__pycache__
