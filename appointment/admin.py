@@ -10,6 +10,6 @@ class CustomerAdmin(admin.ModelAdmin):
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ['salon','customer','employee','service','date','time','duration']
-    list_filter = ('salon','customer','employee','service','date')
+    list_display = ['name','email','phoneNumber','service','note','appoinmentDate','appoinmentTime','applyDate','remarkDate','appointmentNumber','remark']
+    list_filter = ('name','email','phoneNumber','service','note','appoinmentDate','appoinmentTime','applyDate','remarkDate','appointmentNumber','remark')
 

@@ -1,4 +1,8 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
 from salon.models import Salon, SalonServices, Employee
 
 class Customer(models.Model):
@@ -13,16 +17,31 @@ class Customer(models.Model):
 
 
 class Appointment(models.Model):
-    date=models.DateField()
-    time= models.TimeField()
-    salon=models.ForeignKey(Salon, on_delete=models.CASCADE)
-    customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
-    service=models.ForeignKey(SalonServices,on_delete=models.CASCADE)
-    employee=models.ForeignKey(Employee,on_delete=models.CASCADE)
-    duration=models.TimeField()
-
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phoneNumber = models.CharField(max_length=11)
+    service = models.ForeignKey(SalonServices,on_delete=CASCADE)
+    note = models.TextField()
+    appoinmentDate = models.DateField()
+    appoinmentTime = models.TimeField()  
+    applyDate = models.DateTimeField(auto_now_add=True)
+    remarkDate = models.DateTimeField(auto_now=True)
+    appointmentNumber = models.IntegerField(null=True, blank=True)
+    REMARK_CHOICES = (
+        ('1', 'Accepted'),
+        ('0', 'Rejected'),
+    )
+    remark = models.CharField(max_length=1, choices=REMARK_CHOICES)
     def __str__(self):
-        return f"{self.salon}{self.service}{self.date}{self.time}"
+        return self.Name
+
+@receiver(post_save, sender=Appointment)
+def appointment_listing_update(sender, instance, created, **kwargs):
+    appointmentnumber = 6000
+    if created:
+        instance.AppointmentNumber = appointmentnumber + instance.id
+        instance.save()
+
 
     class Meta:
         verbose_name = 'Запись'

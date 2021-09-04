@@ -12,41 +12,59 @@
       {% csrf_token %}
       <label>
         Name
-        <input type="text" name="name" required>
+        <input type="text" name="your-name" required>
       </label>
       <div class="two-cols">
         <label>
           Email address
-          <p><input type="email" name="email" required></p>
+          <p><input type="email" name="your-email" required></p>
 
         </label>
         <label>
           Phone number
-          <p><input type="tel" name="phone"><p>
+          <p><input type="tel" name="your-phone"><p>
         </label>
       </div>
     </fieldset>
     <fieldset>
-      <h6><strong>Salon:</strong> <a href="">{{ salon.name }}</a></h6> <!-- author detail link not yet defined -->
+      <h6><strong>Salon:</strong> <a href="">{{ salon.name }} </a></h6> <!-- author detail link not yet defined -->
       <h6><strong>Service:</strong></h6>
       <select>
         {% for service in services %}
           <option value="{{service}}">{{service.name}}</option>
         {% endfor %}
       </select>
+      <br></br>
       <h6><strong>Employee:</strong></h6>
       <select>
         {% for employee in employees %}
           <option value="{{employee}}">{{employee.name}}</option>
         {% endfor %}
       </select>
+      <br></br>
       <p><strong>Date:</strong> {{ appointment.date }}</p>
       <input type="date" name="Appointment request" required>
           </label>
           <div class="inline">
             <label>
-              
+      <br></br>
       <p><strong>Time:</strong> {{ appointment.time }}</p>
+
+  <div class="col-md-6">
+  <div class="form-group mb-30">
+  <select name="your-time" class="form-control">
+  <option value="Choose your time">Choose time</option>
+  <option value="9.00 to 10.00">9.00 to 10.00</option>
+  <option value="9.00 to 10.00">10.00 to 11.00</option>
+  <option value="9.00 to 10.00">11.00 to 12.00</option>
+  <option value="9.00 to 10.00">12.00 to 13.00</option>
+  <option value="9.00 to 10.00">13.00 to 14.00</option>
+  <option value="9.00 to 10.00">14.00 to 15.00</option>
+  <option value="9.00 to 10.00">15.00 to 16.00</option>
+  <option value="9.00 to 10.00">16.00 to 17.00</option>
+  </select>
+  </div>
+  </div>
 
 
       <div class="col-12 text-center">

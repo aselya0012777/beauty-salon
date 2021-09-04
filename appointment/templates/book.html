@@ -4,7 +4,7 @@
 
 {% block content %}
 {% include 'header.html' %} 
-
+<!-- 
 <div class="breadcumb-area bg-img bg-grfadient-overlay"
 style="background-image:url({% static 'img/appointment/background_image.jpg'%}) ;">
     <div class="container h-100">
@@ -32,14 +32,18 @@ style="background-image:url({% static 'img/appointment/background_image.jpg'%}) 
         </div>
     </div>
 </div>
+ -->
 
+<h3>Review information about client: </h3>
+    
 
-<h3>Review your information: </h3>
+        <p>Your name : {{your_name}}</p>
+        <p>Phone number : {{your_phone}}</p>
+        <p>Email : {{your_email}}</p>
+        
+<h4>Will call you back soon for confirmation <i class="icon ion-ios-checkmark-outline"></i></h4>
+        
 
-        <p>{{name}}</p>
-        <p>{{phone}}</p>
-        <p>{{email}}</p>
-        <p>{{salon}}</p>
         <p>{{service}}</p>
         <p>{{employee}}</p>
         
